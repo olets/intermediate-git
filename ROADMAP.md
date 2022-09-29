@@ -1,0 +1,22 @@
+# Roadmap
+
+- [ ] `git log`
+- [ ] `git log -1` 
+- [ ] `git log --oneline`
+- [ ] `git log --oneline -1`
+- [ ] `git log --oneline -2`
+- [ ] `git log --oneline <ref>..`
+- [ ] `git log --oneline <ref1>..<ref2>`
+- [ ] `git cherry-pick <ref>`
+- [ ] `git cherry-pick -n`
+- [ ] `git cherry-pick -`
+- [ ] `git commit --amend`
+- [ ] `git commit --no-edit`
+- [ ] `git commit --amend -m`
+- [ ] `git rebase --interactive`
+- [ ] `git commit --fixup`
+- [ ] `git rebase <ref>`
+- [ ] `git merge <ref>`
+- [ ] `git merge --no-edit`
+- [ ] `git merge --no-ff`
+- [ ] `git merge --no-ff --no-edit`

@@ -1,5 +1,9 @@
 # intermediate-git ![GitHub release (latest by date)](https://img.shields.io/github/v/release/olets/intermediate-git)
 
+## Roadmap
+
+See the [Roadmap](ROADMAP.md).
+
 ## Contributing
 
 Thanks for your interest. Contributions will be considered!
