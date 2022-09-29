@@ -1,12 +1,12 @@
 # Roadmap
 
-- [ ] `git log`
-- [ ] `git log -1` 
-- [ ] `git log --oneline`
-- [ ] `git log --oneline -1`
-- [ ] `git log --oneline -2`
-- [ ] `git log --oneline <ref>..`
-- [ ] `git log --oneline <ref1>..<ref2>`
+- [x] `git log`
+- [x] `git log -1` 
+- [x] `git log --oneline`
+- [x] `git log --oneline -1`
+- [x] `git log --oneline -2`
+- [x] `git log --oneline <ref>..`
+- [x] `git log --oneline <ref1>..<ref2>`
 - [ ] `git cherry-pick <ref>`
 - [ ] `git cherry-pick -n`
 - [ ] `git cherry-pick -`

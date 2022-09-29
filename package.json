@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Primer for leveling up Git use",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
   "keywords": [],
   "author": "Henry Bley-Vroman <olets@olets.dev>",
   "license": "SEE LICENSE IN LICENSE",
