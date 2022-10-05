@@ -30,11 +30,15 @@ To get out of the log pager, press the <kbd>q</kbd> key (or scroll all the way t
 
 The first commit in the `git log` output is the commit you're currently on. The rest are all those "reachable from" this commit. This isn't technically accurate, but for our purposes you can think of that as the current commit and all commits that came before it. If you check out a different commit or different branch (unless the different branch you check out is pointing to the commit you were just on) the `git log` output will be different.
 
+### Compact view
+
 That log might have more information than you need. For a compact view, add the `--oneline` flag.
 
 <details><summary><u>Toggle to show the command</u></summary>
 git log --oneline
 </details>
+
+### Specifying the endpoint
 
 Some questions I ask on a regular basis are "What was the commit message of the commit I just made?" "What were my last `<n>` commits?" "What are the commits on my current branch?" "What are the commits on that other branch?"
 
@@ -49,6 +53,8 @@ git log --oneline HEAD~3
 <details><summary><u>Toggle to show the command</u></summary>
 git log --oneline @~3
 </details>
+
+### Specifying the count
 
 `git-log` can give you the log for a specific number of commits, with the form `git log -<n> <ref>`. Run a `git-log` command to show the one-line logs for `HEAD`
 
@@ -67,6 +73,8 @@ Run a `git-log` command to show the one-line logs for `HEAD` and its two immedia
 <details><summary><u>Toggle to show the command</u></summary>
 git log -3
 </details>
+
+### Specifying a range
 
 `git-log` can you the logs for all commits within a range. The form is `git log <start>..<end>`. Run a `git-log` command to show the one-line logs the commits between `main` and some branch that branches off of it.
 
