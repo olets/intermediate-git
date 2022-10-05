@@ -26,7 +26,7 @@ What order are they in?
 
 If there are more than fit in a screen, press the <kbd>Enter</kbd> key to scroll down.
 
-To get of the log pager, press the <kbd>q</kbd> key (or scroll all the way to the end).
+To get out of the log pager, press the <kbd>q</kbd> key (or scroll all the way to the end).
 
 The first commit in the `git log` output is the commit you're currently on. The rest are all those "reachable from" this commit. This isn't technically accurate, but for our purposes you can think of that as the current commit and all commits that came before it. If you check out a different commit or different branch (unless the different branch you check out is pointing to the commit you were just on) the `git log` output will be different.
 
@@ -66,7 +66,7 @@ git log --oneline main..<the branch name>
 
 GitHub uses `git-log`-like URLs to compare branches. Go to a GitHub repo that has multiple branches, go to the Pull Requests page, click "Create pull request", select a different "compare" or "base" branch, and when the page finishes updating look at the URL. _GitHub uses three dots `...` for log ranges.
 
-## Git GUI for `git-log`
+## Git tree GUIs
 
 There are a many Git GUIs to choose from. There are desktop apps, terminal UIs ("TUIs"), VS Code extensions. There are apps that let you do just about every common Git task by clicking buttons, and ones that provide more minimal visualization. I have a full-featured desktop Git GUI open at all times, but still do a lot of command line Git. We'll use one that is primarily a GUI for `git-log`.
 
