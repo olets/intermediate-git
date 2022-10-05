@@ -32,8 +32,8 @@ export default {
         {
           children: [
             "/README.md",
-            "/git-log.md",
-            "/replaying-work.md",
+            "/finding-out-what-commits-have-been-made.md",
+            "/reapplying-work.md",
           ],
         },
       ],
