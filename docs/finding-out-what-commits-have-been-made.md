@@ -1,6 +1,6 @@
 # Finding out what commits have been made
 
-## `git-log`
+## As a list
 
 <https://git-scm.com/docs/git-log>
 
@@ -32,7 +32,7 @@ The first commit in the `git log` output is the commit you're currently on. The 
 
 That log might have more information than you need. For a compact view, add the `--oneline` flag.
 
-<details><summary>Toggle to show the command</summary>
+<details><summary><u>Toggle to show the command</u></summary>
 git log --oneline
 </details>
 
@@ -40,42 +40,48 @@ Some questions I ask on a regular basis are "What was the commit message of the 
 
 `git-log` can give you the log working back from any arbitrary commit, branch, or other ref. Run a `git-log` command to show the one-line log leading up to the commit three commits before `HEAD`.
 
-<details><summary>Toggle to show the command</summary>
+<details><summary><u>Toggle to show the command</u></summary>
 git log --oneline HEAD~3
 </details>
 
 `HEAD` is always where we're _at_. To save us some keystrokes, Git provides a shorthand for `HEAD`: `@`. Run a `git-log` command to show the same output again the same output again, but this time use the `@` shorthand.
 
-<details><summary>Toggle to show the command</summary>
+<details><summary><u>Toggle to show the command</u></summary>
 git log --oneline @~3
 </details>
 
-`git-log` can give you the log for a specific number of commits, with the form `git log -<n>`. Run a `git-log` command to show the one-line logs for the checked out commit
+`git-log` can give you the log for a specific number of commits, with the form `git log -<n> <ref>`. Run a `git-log` command to show the one-line logs for `HEAD`
 
-<details><summary>Toggle to show the command</summary>
+<details><summary><u>Toggle to show the command</u></summary>
+git log -1 @
+</details>
+
+There's no reason to ever run that last command. In `git log -<n> <ref>` the `<ref>` is optional. Leaving it off is equivalent to specifying `@` (or `HEAD`). Run a `git-log` command equivalent to the previous one but shorter.
+
+<details><summary><u>Toggle to show the command</u></summary>
 git log -1
 </details>
 
-Run a `git-log` command to show the one-line logs for the checked out commit and its two immediate ancestors
+Run a `git-log` command to show the one-line logs for `HEAD` and its two immediate ancestors
 
-<details><summary>Toggle to show the command</summary>
+<details><summary><u>Toggle to show the command</u></summary>
 git log -3
 </details>
 
 `git-log` can you the logs for all commits within a range. The form is `git log <start>..<end>`. Run a `git-log` command to show the one-line logs the commits between `main` and some branch that branches off of it.
 
-<details><summary>Toggle to show the command</summary>
+<details><summary><u>Toggle to show the command</u></summary>
 git log --oneline main..my-feature
 </details>
 
-Which commits show? Were both the `<start>` and the `<end>` included in the log?
+What exactly is `git log <start>..<end>` showing? Run `git-log` commands to determine whether both `<start>` and `<end>` were included in that output. _Tip: the commands won't tell you directly, but together with the previous command's output they'll give you the answer._
 
-<details><summary>Toggle to show the commands</summary>
+<details><summary><u>Toggle to show the commands</u></summary>
 git log --oneline main
 git log --oneline my-feature
 </details>
 
-<details><summary>Toggle to see the answer</summary>
+<details><summary><u>Toggle to see the answer</u></summary>
 Start is not included in the output; end is. It's
 <pre>
 git log &lt;start (exclusive)>..&lt;end (inclusive)>
@@ -86,24 +92,29 @@ In `git log <start>..<end>`, `<end>` is optional. If you leave it off Git gives 
 
 Check out the feature branch you used in the previus commands. Run a `git-log` command with the same output as the previous command, but this time omit the second ref.
 
-<details><summary>Toggle to show the command</summary>
-git log --oneline main..my-feature
+<details><summary><u>Toggle to show the commands</u></summary>
+git checkout my-feature
+git log --oneline main..
 </details>
 
-### GitHub URL schemes
+## As a tree visualization
 
-GitHub uses `git-log`-like URLs to compare branches. Go to a GitHub repo that has multiple branches, go to the Pull Requests page, click "Create pull request", select a different "compare" or "base" branch, and when the page finishes updating look at the URL. _GitHub uses three dots `...` for log ranges.
+You can get really fancy with `git-log`. The `--graph` option will present the commit logs as a "tree graph", which can be helpful for understanding how branches relate to each other. (For examples, see [Reapplying work](/reapplying-work).) Try this in a Git repo that has a lot of branches:
 
-## Git tree GUIs
+```shell
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s%n' --abbrev-commit --date=relative --branches
+```
 
-There are a many Git GUIs to choose from. There are desktop apps, terminal UIs ("TUIs"), VS Code extensions. There are apps that let you do just about every common Git task by clicking buttons, and ones that provide more minimal visualization. I have a full-featured desktop Git GUI open at all times, but still do a lot of command line Git. We'll use one that is primarily a GUI for `git-log`.
+It can get even prettier if we move from the terminal to a Git GUI. There are a many Git GUIs to choose from. There are desktop apps, terminal UIs ("TUIs"), VS Code extensions. There are apps that let you do just about every common Git task by clicking buttons, and ones that provide more minimal visualization. Some people find them useful in some circumstances, some people love them, some people think "real" developers don't use GUI. I do a lot of my Git work on the command line, and I have a desktop Git GUI open at all times, largely to have the full tree visualization always at hand.
 
-Open a Git repo in [VS Code](https://code.visualstudio.com/). 
+Let's try one!
 
-Install the VS Code extension [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph).
-
-In VS Code, from the command palette (<kbd>Shift</kbd><kbd>Command</kbd><kbd>P</kbd>) run "Git Graph: View Git Graph (git log)".
+1. Open a Git repo in [VS Code](https://code.visualstudio.com/).
+1. Install the VS Code extension [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph).
+1. From VS Code the command palette (<kbd>Shift</kbd><kbd>Command</kbd><kbd>P</kbd>) run "Git Graph: View Git Graph (git log)".
 
 Each row is a commit. The colored lines in the graph at the left are branches, one color per branch. The "description" column shows commit messages and, in pills, any branches pointing to that commit.
+
+Clicking on a row reveals `git-log` details and the changeset introduced by the commit. (For more on that see [Reapplying Work](/reapplying-work).)
 
 A Git graph visualization such as this one can complement or even often obviate running `git-log` commands in a terminal.
