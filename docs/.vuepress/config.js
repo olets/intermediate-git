@@ -33,6 +33,7 @@ export default {
           children: [
             "/README.md",
             "/git-log.md",
+            "/replaying-work.md",
           ],
         },
       ],
