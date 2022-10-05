@@ -24,6 +24,7 @@
 - [ ] `git merge --no-edit`
 - [ ] `git merge --no-ff`
 - [ ] `git merge --no-ff --no-edit`
+- [ ] resolving conflicts
 
 In passing
 
