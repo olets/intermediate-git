@@ -85,8 +85,10 @@ git log --oneline main..my-feature
 What exactly is `git log <start>..<end>` showing? Run `git-log` commands to determine whether both `<start>` and `<end>` were included in that output. _Tip: the commands won't tell you directly, but together with the previous command's output they'll give you the answer._
 
 <details><summary><u>Toggle to show the commands</u></summary>
+<pre>
 git log --oneline main
 git log --oneline my-feature
+</pre>
 </details>
 
 <details><summary><u>Toggle to see the answer</u></summary>
@@ -101,8 +103,10 @@ In `git log <start>..<end>`, `<end>` is optional. If you leave it off Git gives 
 Check out the feature branch you used in the previus commands. Run a `git-log` command with the same output as the previous command, but this time omit the second ref.
 
 <details><summary><u>Toggle to show the commands</u></summary>
+<pre>
 git checkout my-feature
 git log --oneline main..
+</pre>
 </details>
 
 ## Visualizing with a GUI
