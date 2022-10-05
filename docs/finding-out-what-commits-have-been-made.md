@@ -1,6 +1,6 @@
 # Finding out what commits have been made
 
-## As a list
+## Logging
 
 <https://git-scm.com/docs/git-log>
 
@@ -105,7 +105,7 @@ git checkout my-feature
 git log --oneline main..
 </details>
 
-## As a tree visualization
+## Visualizing with a GUI
 
 You can get really fancy with `git-log`. The `--graph` option will present the commit logs as a "tree graph", which can be helpful for understanding how branches relate to each other. (For examples, see [Reapplying work](/reapplying-work).) Try this in a Git repo that has a lot of branches:
 
