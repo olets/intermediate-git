@@ -51,24 +51,26 @@ We'll look at cherry-picking first. Try this example:
     ```
     :::
 1. Create and check out a new branch called `cherry-picking-experiment-1`
-    ::: details Toggle to show individual steps
+    ::::: details Toggle to show the command(s)
+    :::: code-group
+    ::: code-group-item Individual steps
     ```shell
     git branch cherry-picking-experiment-1
     git checkout cherry-picking-experiment-1
     ```
     :::
-
-    ::: details Toggle to show a traditional oneliner
+    ::: code-group-item Traditional oneliner
     ```shell
     git checkout -b cherry-picking-experiment-1
     ```
     :::
-
-    ::: details Toggle to show a modern oneliner
+    ::: code-group-item Modern oneliner
     ```shell
     git switch -c cherry-picking-experiment-1
     ```
     :::
+    ::::
+    :::::
 1. In your editor (or via the command line if you prefer) create a new file `cherry-picking-experiment` with this content:
    ```
    a
@@ -234,37 +236,43 @@ We'll look at cherry-picking first. Try this example:
 
 This same principle —that when a commit is reapplied to a different ancestor the new commit's diff relative to its immediate ancestor is not necessarily the same as the old commit's diff relative to _its_ immediate ancestor— applies in rebasing too.
 1. Create a new branch called `cherry-picking-experiment-3` pointing to the same commit as `cherry-picking-experiment-2`. No need to check it out.
-    ::: details Toggle to show individual steps
+    ::::: details Toggle to show command(s)
+    :::: code-group
+    ::: code-group-item Individual steps
     ```shell
     git checkout cherry-picking-experiment-2
     git branch cherry-picking-experiment-3
     ```
     :::
-
-    ::: details Toggle to show a oneliner
+    ::: code-group-item Oneliner
     ```shell
     git branch cherry-picking-experiment-3 cherry-picking-experiment-2
     ```
     :::
+    :::::
 1. Create and check out a new branch called `cherry-picking-experiment-4` pointing to the commit as `cherry-picking-experiment-1` was at before you cherry picked.
-    ::: details Toggle to show individual steps
+    ::::: details Toggle to show command(s)
+    :::: code-group
+    ::: code-group-item Individual steps
     ```shell
     git branch cherry-picking-experiment-4 cherry-picking-experiment-1~
     git checkout cherry-picking-experiment-4
     ```
     :::
 
-    ::: details Toggle to show a traditional oneliner
+    ::: code-group-item Traditional oneliner
     ```shell
     git checkout -b cherry-picking-experiment-4 cherry-picking-experiment-1~
     ```
     :::
 
-    ::: details Toggle to show a modern oneliner
+    ::: code-group-item Modern oneliner
     ```shell
     git switch -c cherry-picking-experiment-4 cherry-picking-experiment-1~
     ```
     :::
+    ::::
+    :::::
 1. Hold in your mind the current Git graph
     ::: details Toggle to see the graph
     ```
@@ -276,12 +284,22 @@ This same principle —that when a commit is reapplied to a different ancestor t
 
     Or [use a Git GUI to visualize it](/finding-out-what-commits-have-been-made.html#visualizing-commit-graphs).
 1. Rebase `cherry-picking-experiment-3` off `cherry-picking-experiment-4`
-    ::: details Toggle to show the commands
+    ::::: details Toggle to show command(s)
+    :::: code-group
+    ::: code-group-item Individual steps
     ```shell
     git checkout cherry-picking-experiment-3
     git rebase cherry-picking-experiment-4
     ```
     :::
+
+    ::: code-group-item Oneliner
+    ```shell
+    git rebase cherry-picking-experiment-4 cherry-picking-experiment-3
+    ```
+    :::
+    ::::
+    :::::
 1. Now we have
     ```
     (cherry-picking-experiment-base) < abc < dbc(cherry-picking-experiment-4) < dbe''(cherry-picking-experiment-3)
