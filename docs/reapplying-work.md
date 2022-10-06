@@ -1,6 +1,20 @@
 # Reapplying work
 
-> Prerequisites: knowledge of how to run shell commands in a terminal. Familiarity with Git concepts of commits, commit messages, and commit ancestors. Familiarity with git-cherry-pick and git-rebase.
+::: warning PREREQUISITES
+- Knowledge of how to run shell commands in a terminal
+- Familiarity with Git concepts of commits, commit messages, and commit ancestors
+- Familiarity with `git cherry-pick` and `git rebase`
+:::
+
+::: tip
+I recommend visualizing the commit graph while working through this. See [Visualizing commit graphs](/finding-out-what-commits-have-been-made.html#visualizing-commit-graphs).
+:::
+
+::: danger HOLD UP
+Before expanding toggles, try things out on your own!
+:::
+
+## Introduction
 
 Some Git tutorials present `cherry-pick` and `rebase` as duplicating commits. That's good enough for a basic understanding but not exactly right. The difference doesn't immediately affect the Git user in typical scenarios. But looking into it may help solidify your mental model of Git, and builds a foundation for knowing what to do when cherry picking or rebasing gets tricky.
 
@@ -20,11 +34,6 @@ We'll use
     <https://git-scm.com/docs/git-diff>
     
     > Show changes between commits, commit and working tree, etc
-
-
-::: tip
-I recommend visualizing the commit graph while working through this. See [Visualizing commit graphs](/finding-out-what-commits-have-been-made.html#visualizing-commit-graphs).
-:::
 
 ## Cherry picking
 

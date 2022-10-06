@@ -1,6 +1,15 @@
 # Finding out what commits have been made
 
-> Prerequisites: knowledge of how to run shell commands in a terminal. Familiarity with Git concepts of commits, commit messages, and commit ancestors.
+::: warning PREREQUISITES
+- Knowledge of how to run shell commands in a terminal
+- Familiarity with Git concepts of commits, commit messages, and commit ancestors.
+:::
+
+::: danger HOLD UP
+Before expanding toggles, try things out on your own!
+:::
+
+<!-- TODO intro -->
 
 ## Logging
 
