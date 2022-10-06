@@ -21,6 +21,11 @@ We'll use
     
     > Show changes between commits, commit and working tree, etc
 
+
+::: tip
+I recommend visualizing the commit graph while working through this. See [Visualizing commit graphs](/finding-out-what-commits-have-been-made.html#visualizing-commit-graphs).
+:::
+
 ## Cherry picking
 
 <https://git-scm.com/docs/git-cherry-pick>
@@ -139,7 +144,7 @@ We'll look at cherry-picking first. Try this example:
     </pre>
     </details>
 
-    Or [use a Git GUI to visualize it](/finding-out-what-commits-have-been-made.html#git-tree-guis).
+    Or [use a Git GUI to visualize it](/finding-out-what-commits-have-been-made.html#visualizing-commit-graphs).
 
     Cherry pick the "tip" commit of the branch `cherry-picking-experiment-2`
 
@@ -223,7 +228,7 @@ This same principle —that when a commit is reapplied to a different ancestor t
     </pre>
     </details>
 
-    Or [use a Git GUI to visualize it](/finding-out-what-commits-have-been-made.html#git-tree-guis).
+    Or [use a Git GUI to visualize it](/finding-out-what-commits-have-been-made.html#visualizing-commit-graphs).
 1. Rebase `cherry-picking-experiment-3` off `cherry-picking-experiment-4`
     <details><summary><u>Toggle to show the commands</u></summary>
     <pre>

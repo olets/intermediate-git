@@ -111,7 +111,7 @@ git log --oneline main..
 </pre>
 </details>
 
-## Visualizing with a GUI
+## Visualizing commit graphs
 
 You can get really fancy with `git-log`. The `--graph` option will present the commit logs as a "tree graph", which can be helpful for understanding how branches relate to each other. (For examples, see [Reapplying work](/reapplying-work).) Try this in a Git repo that has a lot of branches:
 
