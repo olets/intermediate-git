@@ -1,5 +1,7 @@
 # Finding out what commits have been made
 
+> Prerequisites: knowledge of how to run shell commands in a terminal. Familiarity with Git concepts of commits, commit messages, and commit ancestors.
+
 ## Logging
 
 <https://git-scm.com/docs/git-log>
