@@ -158,7 +158,7 @@ We'll look at cherry-picking first. Try this example:
     <pre>
     1 file changed, 1 insertion(+), 1 deletion(-)
     </pre>
-    meaning that _1_ line was added and 1 _line_ was deleted
+    meaning that <i>1</i> line was added and 1 <i>line</i> was deleted
     </details>
 
     Why the difference?
