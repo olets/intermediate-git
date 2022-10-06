@@ -9,10 +9,6 @@ export default {
     lastUpdated: false,
     navbar: [
       {
-        text: "Guide",
-        link: "/guide/",
-      },
-      {
         text: "Roadmap",
         link: "https://github.com/olets/intermediate-git/blob/main/ROADMAP.md",
       },
