@@ -4,6 +4,7 @@
 - Knowledge of how to run shell commands in a terminal
 - Familiarity with Git concepts of commits, commit messages, and commit ancestors
 - Familiarity with `git cherry-pick` and `git rebase`
+- Familiarity with relative references
 :::
 
 ::: tip
