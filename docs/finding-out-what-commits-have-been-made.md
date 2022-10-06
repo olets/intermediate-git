@@ -36,9 +36,11 @@ The first commit in the `git log` output is the commit you're currently on. The 
 
 That log might have more information than you need. For a compact view, add the `--oneline` flag.
 
-<details><summary><u>Toggle to show the command</u></summary>
+::: details Toggle to show the command
+```shell
 git log --oneline
-</details>
+```
+:::
 
 ### Specifying the endpoint
 
@@ -46,70 +48,82 @@ Some questions I ask on a regular basis are "What was the commit message of the 
 
 `git-log` can give you the log working back from any arbitrary commit, branch, or other ref. Run a `git-log` command to show the one-line log leading up to the commit three commits before `HEAD`.
 
-<details><summary><u>Toggle to show the command</u></summary>
+::: details Toggle to show the command
+```shell
 git log --oneline HEAD~3
-</details>
+```
+:::
 
 `HEAD` is always where we're _at_. To save us some keystrokes, Git provides a shorthand for `HEAD`: `@`. Run a `git-log` command to show the same output again the same output again, but this time use the `@` shorthand.
 
-<details><summary><u>Toggle to show the command</u></summary>
+::: details Toggle to show the command
+```shell
 git log --oneline @~3
-</details>
+```
+:::
 
 ### Specifying the count
 
 `git-log` can give you the log for a specific number of commits, with the form `git log -<n> <ref>`. Run a `git-log` command to show the one-line logs for `HEAD`
 
-<details><summary><u>Toggle to show the command</u></summary>
+::: details Toggle to show the command
+```shell
 git log -1 @
-</details>
+```
+:::
 
 There's no reason to ever run that last command. In `git log -<n> <ref>` the `<ref>` is optional. Leaving it off is equivalent to specifying `@` (or `HEAD`). Run a `git-log` command equivalent to the previous one but shorter.
 
-<details><summary><u>Toggle to show the command</u></summary>
+::: details Toggle to show the command
+```shell
 git log -1
-</details>
+```
+:::
 
 Run a `git-log` command to show the one-line logs for `HEAD` and its two immediate ancestors
 
-<details><summary><u>Toggle to show the command</u></summary>
+::: details Toggle to show the command
+```shell
 git log -3
-</details>
+```
+:::
 
 ### Specifying a range
 
 `git-log` can you the logs for all commits within a range. The form is `git log <start>..<end>`. Run a `git-log` command to show the one-line logs the commits between `main` and some branch that branches off of it.
 
-<details><summary><u>Toggle to show the command</u></summary>
+::: details Toggle to show the command
+```shell
 git log --oneline main..my-feature
-</details>
+```
+:::
 
 What exactly is `git log <start>..<end>` showing? Run `git-log` commands to determine whether both `<start>` and `<end>` were included in that output. _Tip: the commands won't tell you directly, but together with the previous command's output they'll give you the answer._
 
-<details><summary><u>Toggle to show the commands</u></summary>
-<pre>
+::: details Toggle to show the commands
+```shell
 git log --oneline main
 git log --oneline my-feature
-</pre>
-</details>
+```
+:::
 
-<details><summary><u>Toggle to see the answer</u></summary>
+::: details Toggle to see the answer
 Start is not included in the output; end is. It's
-<pre>
-git log &lt;start (exclusive)>..&lt;end (inclusive)>
-</pre>
-</details>
+```shell
+git log <start (exclusive)>..<end (inclusive)>
+```
+:::
 
 In `git log <start>..<end>`, `<end>` is optional. If you leave it off Git gives you the diff between `<start>` and `HEAD`.
 
 Check out the feature branch you used in the previus commands. Run a `git-log` command with the same output as the previous command, but this time omit the second ref.
 
-<details><summary><u>Toggle to show the commands</u></summary>
-<pre>
+::: details Toggle to show the commands
+```shell
 git checkout my-feature
 git log --oneline main..
-</pre>
-</details>
+```
+:::
 
 ## Visualizing commit graphs
 
