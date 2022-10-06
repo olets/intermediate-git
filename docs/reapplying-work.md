@@ -26,6 +26,7 @@ We'll use
 
     > Apply the changes introduced by some existing commits
 - `git-rebase`
+
     <https://git-scm.com/docs/git-rebase>
 
     > Reapply commits on top of another base tip

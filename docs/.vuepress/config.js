@@ -8,6 +8,13 @@ export default {
     code: {
       lineNumbers: false,
     },
+    links: {
+      externalAttrs: {
+        class: "external-link",
+        rel: "",
+        target: "",
+      },
+    },
   },
   theme: defaultTheme({
     contributors: false,
