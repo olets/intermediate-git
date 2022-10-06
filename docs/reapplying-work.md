@@ -45,13 +45,14 @@ We'll use
 We'll look at cherry-picking first. Try this example:
 
 1. In a Git repo, create a new branch called `cherry-picking-experiment-base`. No need to check it out.
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git branch cherry-picking-experiment-base
     ```
     :::
 1. Create and check out a new branch called `cherry-picking-experiment-1`
-    ::::: details Toggle to show the command(s)
+    ::::: details Toggle to reveal my solutions
+    Click a tab to see other solutions
     :::: code-group
     ::: code-group-item Individual steps
     ```shell
@@ -78,7 +79,7 @@ We'll look at cherry-picking first. Try this example:
    c
    ```
 1. Save, the file, and commit the change with the commit message "abc".
-    ::: details Toggle to show the commands
+    ::: details Toggle to reveal my solution
     ```shell
     git add cherry-picking-experiment
     git commit -m "abc"
@@ -86,7 +87,7 @@ We'll look at cherry-picking first. Try this example:
     :::
 1. [`git-diff`](https://git-scm.com/docs/git-diff) is a command to "show changes between commits, commit and working tree, etc". A common use for it is to see everything that changed between two commits, the command structure for which is `git diff <base> <change>`. Run a single `git-diff` command to show the "diff" (from _difference_) introduced by `cherry-picking-experiment-1` relative to `cherry-picking-experiment-base`.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff cherry-picking-experiment-base cherry-picking-experiment-1
     ```
@@ -100,7 +101,7 @@ We'll look at cherry-picking first. Try this example:
 
     Order matters. Run a `git-diff` command to show the opposite change.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff cherry-picking-experiment-1 cherry-picking-experiment-base
     ```
@@ -110,7 +111,7 @@ We'll look at cherry-picking first. Try this example:
 
     We've seen the relative units pattern `<ref>~[<n>]`. Run a `git-diff` command that has the same output as the first of the two above, but use a relative reference instead of `cherry-picking-experiment-base`.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff cherry-picking-experiment-1~ cherry-picking-experiment-1
     ```
@@ -118,7 +119,7 @@ We'll look at cherry-picking first. Try this example:
 
     We've seen that `HEAD` is always where we're at. Run a `git-diff` command to get that same output again, but this time use `HEAD` as a shorter way of naming the checked out branch.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff HEAD~ HEAD
     ```
@@ -126,7 +127,7 @@ We'll look at cherry-picking first. Try this example:
 
     `HEAD` is always where we're _at_. To save us some keystrokes, Git provides a shorthand for `HEAD`: `@`. Run a `git-diff` command with the same output again, but this time use the `@` shorthand.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff @~ @
     ```
@@ -134,7 +135,7 @@ We'll look at cherry-picking first. Try this example:
 
     In the `git diff <ref1> <ref2>` form, `<ref2>` is optional. If you leave it off Git gives you the diff between `<ref1>` and `HEAD`. Run a `git-diff` command with the same output again, but this time omit the second ref.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff @~
     ```
@@ -150,7 +151,7 @@ We'll look at cherry-picking first. Try this example:
    ```
 1. Save, add, commit with the message "dbe"
 1. Run a `git-diff` command to see the changeset introduced by the commit you just made
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff @~
     ```
@@ -166,7 +167,7 @@ We'll look at cherry-picking first. Try this example:
     ```
 1. Save, add, commit with the message "dbc"
 1. Run a `git-diff` command to see the changeset introduced by the commit you just made
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff @~
     ```
@@ -184,7 +185,7 @@ We'll look at cherry-picking first. Try this example:
 
     Cherry pick the "tip" commit of the branch `cherry-picking-experiment-2`
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git cherry-pick cherry-picking-experiment-2
     ```
@@ -192,7 +193,7 @@ We'll look at cherry-picking first. Try this example:
 
     The output logged by the `git-cherry-pick` command has a notable difference from (if you scroll up in your terminal) the output logged by the last `git-commit` command you ran in `cherry-picking-experiment-2` — that is, from the output logged when you created the commit you just cherry-picked into `cherry-picking-experiment-1`.
 
-    ::: details Toggle to show the difference I'm refering to
+    ::: details Toggle to reveal the difference I'm refering to
     The <code>commit</code> command log said
     ```
     1 file changed, 2 insertions(+), 2 deletions(-)
@@ -208,7 +209,7 @@ We'll look at cherry-picking first. Try this example:
     
     If you see where I'm going, see it out with me if only for the muscle memory practice of running these commands. Run a `git-diff` command to see the changeset introduced by the commit the `git-cherry-pick` command created.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff @~
     ```
@@ -216,7 +217,7 @@ We'll look at cherry-picking first. Try this example:
 
     Compare that to the changeset introduced by the cherry-picked commit.
 
-    ::: details Toggle to show the command
+    ::: details Toggle to reveal my solution
     ```shell
     git diff cherry-picking-experiment-2~ cherry-picking-experiment-2
     ```
@@ -224,7 +225,7 @@ We'll look at cherry-picking first. Try this example:
     
     Different diff. Why?
 
-    ::: details Toggle to show why
+    ::: details Toggle to reveal why
     Part of the changeset introduced by the commit in `cherry-picking-experiment-2` had already been made in `cherry-picking-experiment-1` before the `git-cherry-pick` command was run. The commit in `cherry-picking-experiment-2` changes the first and third lines of our file. Before cherry picking, we made a commit in `cherry-picking-experiment-1` which introduced the line 1 change.
     :::
 
@@ -236,7 +237,8 @@ We'll look at cherry-picking first. Try this example:
 
 This same principle —that when a commit is reapplied to a different ancestor the new commit's diff relative to its immediate ancestor is not necessarily the same as the old commit's diff relative to _its_ immediate ancestor— applies in rebasing too.
 1. Create a new branch called `cherry-picking-experiment-3` pointing to the same commit as `cherry-picking-experiment-2`. No need to check it out.
-    ::::: details Toggle to show command(s)
+    ::::: details Toggle to reveal my solutions
+    Click a tab to see other solutions
     :::: code-group
     ::: code-group-item Individual steps
     ```shell
@@ -251,7 +253,8 @@ This same principle —that when a commit is reapplied to a different ancestor t
     :::
     :::::
 1. Create and check out a new branch called `cherry-picking-experiment-4` pointing to the commit as `cherry-picking-experiment-1` was at before you cherry picked.
-    ::::: details Toggle to show command(s)
+    ::::: details Toggle to reveal my solutions
+    Click a tab to see other solutions
     :::: code-group
     ::: code-group-item Individual steps
     ```shell
@@ -284,7 +287,8 @@ This same principle —that when a commit is reapplied to a different ancestor t
 
     Or [use a Git GUI to visualize it](/finding-out-what-commits-have-been-made.html#visualizing-commit-graphs).
 1. Rebase `cherry-picking-experiment-3` off `cherry-picking-experiment-4`
-    ::::: details Toggle to show command(s)
+    ::::: details Toggle to reveal my solutions
+    Click a tab to see other solutions
     :::: code-group
     ::: code-group-item Individual steps
     ```shell

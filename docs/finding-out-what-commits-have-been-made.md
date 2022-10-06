@@ -45,7 +45,7 @@ The first commit in the `git log` output is the commit you're currently on. The 
 
 That log might have more information than you need. For a compact view, add the `--oneline` flag.
 
-::: details Toggle to show the command
+::: details Toggle to reveal my solution
 ```shell
 git log --oneline
 ```
@@ -57,7 +57,7 @@ Some questions I ask on a regular basis are "What was the commit message of the 
 
 `git-log` can give you the log working back from any arbitrary commit, branch, or other ref. Run a `git-log` command to show the one-line log leading up to the commit three commits before `HEAD`.
 
-::: details Toggle to show the command
+::: details Toggle to reveal my solution
 ```shell
 git log --oneline HEAD~3
 ```
@@ -65,7 +65,7 @@ git log --oneline HEAD~3
 
 `HEAD` is always where we're _at_. To save us some keystrokes, Git provides a shorthand for `HEAD`: `@`. Run a `git-log` command to show the same output again the same output again, but this time use the `@` shorthand.
 
-::: details Toggle to show the command
+::: details Toggle to reveal my solution
 ```shell
 git log --oneline @~3
 ```
@@ -75,7 +75,7 @@ git log --oneline @~3
 
 `git-log` can give you the log for a specific number of commits, with the form `git log -<n> <ref>`. Run a `git-log` command to show the one-line logs for `HEAD`
 
-::: details Toggle to show the command
+::: details Toggle to reveal my solution
 ```shell
 git log -1 @
 ```
@@ -83,7 +83,7 @@ git log -1 @
 
 There's no reason to ever run that last command. In `git log -<n> <ref>` the `<ref>` is optional. Leaving it off is equivalent to specifying `@` (or `HEAD`). Run a `git-log` command equivalent to the previous one but shorter.
 
-::: details Toggle to show the command
+::: details Toggle to reveal my solution
 ```shell
 git log -1
 ```
@@ -91,7 +91,7 @@ git log -1
 
 Run a `git-log` command to show the one-line logs for `HEAD` and its two immediate ancestors
 
-::: details Toggle to show the command
+::: details Toggle to reveal my solution
 ```shell
 git log -3
 ```
@@ -101,7 +101,7 @@ git log -3
 
 `git-log` can you the logs for all commits within a range. The form is `git log <start>..<end>`. Run a `git-log` command to show the one-line logs the commits between `main` and some branch that branches off of it.
 
-::: details Toggle to show the command
+::: details Toggle to reveal my solution
 ```shell
 git log --oneline main..my-feature
 ```
@@ -109,7 +109,7 @@ git log --oneline main..my-feature
 
 What exactly is `git log <start>..<end>` showing? Run `git-log` commands to determine whether both `<start>` and `<end>` were included in that output. _Tip: the commands won't tell you directly, but together with the previous command's output they'll give you the answer._
 
-::: details Toggle to show the commands
+::: details Toggle to reveal my solution
 ```shell
 git log --oneline main
 git log --oneline my-feature
@@ -127,7 +127,7 @@ In `git log <start>..<end>`, `<end>` is optional. If you leave it off Git gives 
 
 Check out the feature branch you used in the previus commands. Run a `git-log` command with the same output as the previous command, but this time omit the second ref.
 
-::: details Toggle to show the commands
+::: details Toggle to reveal my solution
 ```shell
 git checkout my-feature
 git log --oneline main..
