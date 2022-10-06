@@ -132,13 +132,23 @@ We'll look at cherry-picking first. Try this example:
 
     In practice it's unusual to run `git-diff` in this second order. The purpose of running it "backwards" is to highlight the risk of forgetting the command structure.
 
-    We've seen the relative units pattern `<ref>~[<n>]`. Run a `git-diff` command that has the same output as the first of the two above, but use a relative reference instead of `cherry-picking-experiment-base`.
+    The relative units pattern is `<ref>~[<n>]`. Run a `git-diff` command that has the same output as the first of the two above, but use a relative reference instead of `cherry-picking-experiment-base`.
 
-    ::: details Toggle to reveal my solution
+    :::: details Toggle to reveal my solution
     ```shell
     git diff cherry-picking-experiment-1~ cherry-picking-experiment-1
     ```
+    ::: tip
+    In "the pattern is `<ref>~[<n>]"` I used the square brackets to signify that `<n>` is optional. If you leave it off Git assumes `1`. So
+    ```shell
+    git diff cherry-picking-experiment-1~ cherry-picking-experiment-1
+    ```
+    is shorthand for
+    ```shell
+    git diff cherry-picking-experiment-1~1 cherry-picking-experiment-1
+    ```
     :::
+    ::::
 
     We've seen that `HEAD` is always where we're at. Run a `git-diff` command to get that same output again, but this time use `HEAD` as a shorter way of naming the checked out branch.
 
