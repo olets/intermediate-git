@@ -4,6 +4,11 @@ export default {
   lang: 'en-US',
   title: 'Intermediate Git',
   description: 'Primer for leveling up Git use',
+  markdown: {
+    code: {
+      lineNumbers: false,
+    },
+  },
   theme: defaultTheme({
     contributors: false,
     lastUpdated: false,
