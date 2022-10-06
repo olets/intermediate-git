@@ -11,10 +11,6 @@ export default {
         link: "/guide/",
       },
       {
-        text: "Changelog",
-        link: "https://github.com/olets/intermediate-git/blob/main/CHANGELOG.md",
-      },
-      {
         text: "Roadmap",
         link: "https://github.com/olets/intermediate-git/blob/main/ROADMAP.md",
       },
