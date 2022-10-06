@@ -5,6 +5,8 @@ export default {
   title: 'Intermediate Git',
   description: 'Primer for leveling up Git use',
   theme: defaultTheme({
+    contributors: false,
+    lastUpdated: false,
     navbar: [
       {
         text: "Guide",
