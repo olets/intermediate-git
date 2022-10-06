@@ -1,6 +1,8 @@
 # Reapplying work
 
-In the tutorial, `cherry-pick` and `rebase` both duplicate commits. The text for a `cherry-pick` lesson says it "plops" a commit. That's good enough for a rough explanation, but in my reading it has an inaccurate implication: that the commit(s) created by the `cherry-pick` or `rebase` are the same as the commits that were "copied". Not exactly right. Let's see why.
+> Prerequisites: knowledge of how to run shell commands in a terminal. Familiarity with Git concepts of commits, commit messages, and commit ancestors. Familiarity with git-cherry-pick and git-rebase.
+
+Some Git tutorials present `cherry-pick` and `rebase` as duplicating commits. That's good enough for a basic understanding but not exactly right. The difference doesn't immediately affect the Git user in typical scenarios. But looking into it may help solidify your mental model of Git, and builds a foundation for knowing what to do when cherry picking or rebasing gets tricky.
 
 We'll use
 
