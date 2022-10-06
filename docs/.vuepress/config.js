@@ -45,5 +45,8 @@ export default {
       ],
     },
     sidebarDepth: 3,
+    themePlugins: {
+      externalLinkIcon: false,
+    }
   }),
 }
