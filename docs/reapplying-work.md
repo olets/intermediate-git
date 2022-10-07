@@ -209,9 +209,9 @@ We'll look at cherry-picking first. Try this example:
 1. Hold in your mind the current Git graph - the three branches, the commits, and what each did
     ::: details Toggle to see the graph
     ```
-    (cherry-picking-experiment-base) &lt; abc &lt; dbc(cherry-picking-experiment-1)
-                                      \
-                                        dbe(cherry-picking-experiment-2)
+    (cherry-picking-experiment-base) < abc < dbc(cherry-picking-experiment-1)
+                                           \
+                                             dbe(cherry-picking-experiment-2)
     ```
     :::
 
@@ -313,9 +313,9 @@ This same principle —that when a commit is reapplied to a different ancestor t
 1. Hold in your mind the current Git graph
     ::: details Toggle to see the graph
     ```
-    (cherry-picking-experiment-base) &lt; abc &lt; dbc(cherry-picking-experiment-4) &lt; dbe'(cherry-picking-experiment-1)
-                                      \
-                                        dbe(cherry-picking-experiment-2,cherry-picking-experiment-3)
+    (cherry-picking-experiment-base) < abc < dbc(cherry-picking-experiment-4) < dbe'(cherry-picking-experiment-1)
+                                           \
+                                             dbe(cherry-picking-experiment-2,cherry-picking-experiment-3)
     ```
     :::
 
@@ -341,8 +341,8 @@ This same principle —that when a commit is reapplied to a different ancestor t
 1. Now we have
     ```
     (cherry-picking-experiment-base) < abc < dbc(cherry-picking-experiment-4) < dbe''(cherry-picking-experiment-3)
-                                      \                                       \
-                                        dbe(cherry-picking-experiment-2)        dbe'(cherry-picking-experiment-1)
+                                           \                                  \
+                                             dbe(cherry-picking-experiment-2)   dbe'(cherry-picking-experiment-1)
     ```
     `git-diff` will confirm that the changeset introduced by the commit `cherry-picking-experiment-3` is pointing to (the commit created by the rebase) is different from the changeset introduced the commit `cherry-picking-experiment-3` pointed to before it was rebased (the commit `cherry-picking-experiment-2` points to) but the same as the changeset introduced by the commit `cherry-picking-experiment-1` is pointing to (the commit created by the cherry-picking): the commits `cherry-picking-experiment-1` and `cherry-picking-experiment-3` point to only changed the third line of our file, while the commit `cherry-picking-experiment-2` points to changed the first and third lines.
 
