@@ -38,38 +38,11 @@ We'll use
     
     > Show changes between commits, commit and working tree, etc
 
-We'll need a place to work with, so start by
-- creating a new Git repo
-- making a first commit
-
-:::: details Toggle to reveal my solution
-```shell
-cd my-development-directory
-mkdir intermediate-git
-cd intermediate-git
-git init
-git commit --allow-emtpy -m "initial (empty)"
-```
-The first commit doesn't _have_ to be empty. This or many other solutions would work too:
-```shell
-touch README.md
-git add README.md
-git commit
-```
-::: tip Side Adventure
-If that "`git commit --allow-empty` for the first commit" workflow is new to you, there are a lot of blog posts and StackOverflow answers which talk about it.
-:::
-::::
-
 ## Cherry picking
-
-<https://git-scm.com/docs/git-cherry-pick>
-
-> Apply the changes introduced by some existing commits
 
 We'll look at cherry-picking first. Try this example:
 
-1. In a Git repo, create a new branch called `cherry-picking-experiment-base`. No need to check it out.
+1. In your repo, create a new branch called `cherry-picking-experiment-base`. No need to check it out.
     ::: details Toggle to reveal my solution
     ```shell
     git branch cherry-picking-experiment-base
