@@ -260,9 +260,13 @@ We'll look at cherry-picking first. Try this example:
     
     Different diff. Why?
 
-    ::: details Toggle to reveal why
-    Part of the changeset introduced by the commit in `cherry-picking-experiment-2` had already been made in `cherry-picking-experiment-1` before the `git-cherry-pick` command was run. The commit in `cherry-picking-experiment-2` changes the first and third lines of our file. Before cherry picking, we made a commit in `cherry-picking-experiment-1` which introduced the line 1 change.
-    :::
+    Part of the changeset introduced by the commit `cherry-picking-experiment-2` is pointing to had already been made in `cherry-picking-experiment-1` before the `git-cherry-pick` command was run. The commit in `cherry-picking-experiment-2` changes the first and third lines of our file. Before cherry picking, we made a commit in `cherry-picking-experiment-1` which introduced the line 1 change.
+
+    Specifically, the commit we cherry picked (the `dbe` commit) changed `a` to `d` and changed `c` to `e`. We cherry picked it with `HEAD` pointing to the `dbc` commit.
+    
+    Git recognized that of the two lines the `dbe` commit changed only the second (`c` to `e`) was different from `HEAD`. So the new commit created by cherry picking only changes one line.
+
+    Put that way it might feel intuitive and not worth all the trouble we took to get here — after all it would be meaningless to change the `dbc` commit's `d` to a `d`. But there are scenarios where Git _isn't_ able to recognize what needs to happen in a `cherry-pick` and relies on the user to step in. Knowing how the system works can help the user understand what's going on in those scenarios. We'll get there but first:
 
 ## Rebasing
 
@@ -345,7 +349,12 @@ This same principle —that when a commit is reapplied to a different ancestor t
                                            \                                  \
                                              dbe(cherry-picking-experiment-2)   dbe'(cherry-picking-experiment-1)
     ```
+
+    To clarify the history I've added apostrophes (`'`) to denote commits creating by cherry picking or rebasing. Those won't appear in `git-log` or a Git graph visualization.
+
     `git-diff` will confirm that the changeset introduced by the commit `cherry-picking-experiment-3` is pointing to (the commit created by the rebase) is different from the changeset introduced the commit `cherry-picking-experiment-3` pointed to before it was rebased (the commit `cherry-picking-experiment-2` points to) but the same as the changeset introduced by the commit `cherry-picking-experiment-1` is pointing to (the commit created by the cherry-picking): the commits `cherry-picking-experiment-1` and `cherry-picking-experiment-3` point to only changed the third line of our file, while the commit `cherry-picking-experiment-2` points to changed the first and third lines.
+
+    That is: `git diff dbe'~..dbe` is the same as `git diff dbe''~..dbe''`, but both are different from `git diff dbe~..dbe` — even though both are reapplications of `dbe` (`dbe'` by cherry picking `dbe`, and `dbe''` by rebasing `dbe'`).
 
 ## What this means for the user
 
