@@ -4,7 +4,8 @@
 - Knowledge of how to run shell commands in a terminal
 - Familiarity with Git concepts of commits, commit messages, and commit ancestors
 - Familiarity with `git cherry-pick` and `git rebase`
-- Familiarity with relative references
+- Familiarity with Git relative references
+- A Git repo to work in (see [Create a Git playground](./create-a-git-playground.md))
 :::
 
 ::: tip

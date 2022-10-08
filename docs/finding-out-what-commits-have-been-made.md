@@ -3,6 +3,7 @@
 ::: warning PREREQUISITES
 - Knowledge of how to run shell commands in a terminal
 - Familiarity with Git concepts of commits, commit messages, and commit ancestors.
+- A Git repo to work in (see [Create a Git playground](./create-a-git-playground.md))
 :::
 
 ::: danger HOLD UP
