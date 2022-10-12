@@ -114,7 +114,7 @@ This is what we've built. You could also [use a Git GUI to visualize it](/findin
     ::: danger PAUSE
     It's a good habit to read the rebase output. Git's output is generally clear and helpful. In this case the error output includes "hints" for what to do next.
     
-    But don't do it! First we figure out what happened.
+    This time read it but don't yet do what it says to do! First we'll look into what happened.
     :::
 
     ::::: details Toggle to reveal my solutions
