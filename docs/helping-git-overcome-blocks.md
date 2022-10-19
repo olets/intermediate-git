@@ -172,7 +172,19 @@ In this case let's assume we really want line 1 of `conflicting` to be `a`.
 If the branch we were rebasing had multiple commits, Git would reapply each of them in turn now. But we just had the one, so Git cleans up its "there's a rebase in progress" files, and the rebase is done.
 
 ::: warning TODO
-the exact same thing applies when merging
+What's up with the two lines after the `>>>` line?
+
+Add exercise of
+- a conflict on the first and second lines
+- a conflict on the first and third lines
+
+Consider adding an exercise before the existing three-line-file one: a single-line file.
+:::
+
+::: warning TODO
+The exact same thing applies when merging
+
+Add section explaining conflicts in the context of merge commits.
 :::
 
 ## How this comes up
