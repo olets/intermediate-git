@@ -4,6 +4,17 @@ import { defaultTheme } from 'vuepress';
 import { docsearchPlugin } from '@vuepress/plugin-docsearch';
 
 export default {
+  head: [
+    // Fathom analytics
+    [
+      "script",
+      {
+        src: "https://jazzy-skillful.olets.dev/script.js",
+        'data-site': "WPAIPFKE",
+        'defer': true,
+      }
+    ],
+  ],
   lang: 'en-US',
   title: 'Intermediate Git',
   description: 'Primer for leveling up Git use',
