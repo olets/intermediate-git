@@ -1,4 +1,7 @@
-import { defaultTheme } from 'vuepress'
+import * as dotenv from 'dotenv';
+dotenv.config()
+import { defaultTheme } from 'vuepress';
+import { docsearchPlugin } from '@vuepress/plugin-docsearch';
 
 export default {
   lang: 'en-US',
@@ -16,6 +19,13 @@ export default {
       },
     },
   },
+  plugins: [
+    docsearchPlugin({
+      apiKey: process.env.SEARCH_KEY,
+      appId: process.env.APPLICATION_ID,
+      indexName: process.env.INDEX_NAME,
+    }),
+  ],
   theme: defaultTheme({
     contributors: false,
     lastUpdated: false,
