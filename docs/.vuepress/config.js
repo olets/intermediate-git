@@ -39,7 +39,7 @@ export default {
   ],
   theme: defaultTheme({
     contributors: false,
-    lastUpdated: false,
+    // lastUpdated: false,
     navbar: [
       {
         text: "Roadmap",

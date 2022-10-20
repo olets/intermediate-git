@@ -1,5 +1,10 @@
 # Intermediate Git
 
+::: danger
+This is a work in progress. See footer for details.
+:::
+&nbsp;
+
 The core of Git are `commit`, `pull`, and `push`: adding your work to the version tracker, sharing your work where it can be accessed by collaborators and integrations, and bringing in changes made by others. Add in a working knowledge of `branch`ing and you have fundamental Git knowledge: branching is essential to standard workflows (e.g. contributing via GitHub pull request / GitLab merge request (platform-specific terminology for the same thing)), and it opens the door to working on multiple independent things (features, fixes, refactors, etc) in the same timeframe.
 
 Git comes with many, many more functions to aid in managing commits and branches. What I consider intermediate Git includes knowing how to use `cherry-pick`, `diff`, `log`, `merge`, `rebase` and a few of their options, and `commit` beyond its basics. Intermediate Git users also have an understanding of how to configure Git, and have made some widely-used changes to their config. And they know some way to visualize Git branches, whether that's in plain text in a terminal or prettied up in a Git GUI app.
