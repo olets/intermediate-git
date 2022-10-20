@@ -1,4 +1,4 @@
-# Introduction
+# Intermediate Git
 
 The core of Git are `commit`, `pull`, and `push`: adding your work to the version tracker, sharing your work where it can be accessed by collaborators and integrations, and bringing in changes made by others. Add in a working knowledge of `branch`ing and you have fundamental Git knowledge: branching is essential to standard workflows (e.g. contributing via GitHub pull request / GitLab merge request (platform-specific terminology for the same thing)), and it opens the door to working on multiple independent things (features, fixes, refactors, etc) in the same timeframe.
 

@@ -58,7 +58,10 @@ export default {
       "/": [
         {
           children: [
-            "/README.md",
+            {
+              text: "Introduction",
+              link: "/README.md",
+            },
             "/create-a-git-playground.md",
             "/finding-out-what-commits-have-been-made.md",
             "/reapplying-work.md",
