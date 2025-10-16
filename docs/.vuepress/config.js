@@ -14,6 +14,14 @@ export default {
         defer: true,
       },
     ],
+    [
+      "script",
+      {
+        src: "https://loose-saluki.pikapod.net/script.js",
+        "data-website-id": "a1c9967d-f910-441c-a240-4ccf894a75df",
+        defer: "true",
+      },
+    ],
   ],
   lang: "en-US",
   title: "Intermediate Git",
