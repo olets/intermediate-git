@@ -1,7 +1,7 @@
-import * as dotenv from 'dotenv';
-dotenv.config()
-import { defaultTheme } from 'vuepress';
-import { docsearchPlugin } from '@vuepress/plugin-docsearch';
+import * as dotenv from "dotenv";
+dotenv.config();
+import { defaultTheme } from "vuepress";
+import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 
 export default {
   head: [
@@ -10,14 +10,14 @@ export default {
       "script",
       {
         src: "https://jazzy-skillful.olets.dev/script.js",
-        'data-site': "WPAIPFKE",
-        'defer': true,
-      }
+        "data-site": "WPAIPFKE",
+        defer: true,
+      },
     ],
   ],
-  lang: 'en-US',
-  title: 'Intermediate Git',
-  description: 'Primer for leveling up Git use',
+  lang: "en-US",
+  title: "Intermediate Git",
+  description: "Primer for leveling up Git use",
   markdown: {
     code: {
       lineNumbers: false,
@@ -73,6 +73,6 @@ export default {
     sidebarDepth: 3,
     themePlugins: {
       externalLinkIcon: false,
-    }
+    },
   }),
-}
+};
